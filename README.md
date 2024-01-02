@@ -60,3 +60,6 @@ Adresse IP lue : 192.168.1.50
 ![Screenshot](SCREENSHOTS/RPP-IDLE.png)
 
    
+   Vous pouvez upload votre fichier tranché (extension .goo généralement) en cliquant sur le bouton bleu UPLOAD : 
+   
+![Upload](SCREENSHOTS/RPP-UPLOAD-1-SELECT-FILE.png)
