@@ -1,0 +1,211 @@
+/* styles.css - Assurez-vous que ce fichier est bien lié dans votre index.html */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column; /* Changez la direction pour une disposition en colonne */
+}
+
+.header h1, .header h2 {
+    margin: 0; /* Ajustez les marges selon vos besoins */
+}
+
+.logo {
+    max-height: 200px; /* Ajustez selon la taille souhaitée pour le logo */
+    margin-right: 50px;
+}
+
+.printer-ip-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.printer-ip-container input {
+    padding: 5px;
+    margin-right: 5px;
+}
+
+.edit-ip-btn img {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.container {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 5px;
+}
+
+.status-text {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.progress-container {
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.progress-bar {
+    height: 30px;
+    background-color: #4CAF50;
+    width: 0%;
+    transition: width 0.5s ease;
+}
+
+.progress-text {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+    top: 0;
+}
+
+.file-management-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 80%;
+    margin: 20px auto;
+    align-items: flex-start; /* Aligner les enfants en haut */
+}
+
+.file-list {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0;
+    margin-right: 10px;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    overflow-y: auto;
+    height: 200px; /* Adjust as needed */
+}
+
+.file-list th, .file-list td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.file-list tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.file-list tr:hover {
+    background-color: #ddd;
+}
+
+.file-list th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: #333; /* La même couleur que celle du titre de la page */
+    color: white;
+}
+
+.file-list-item {
+    padding: 5px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between; /* Pour aligner le nom et la taille sur les côtés opposés */
+}
+
+.file-list-item.selected {
+    background-color: #e0e0e0;
+}
+
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Aligner les boutons en haut avec le cadre */
+}
+
+.action-button {
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    color: white;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    width: 100%; /* Faire en sorte que les boutons remplissent le conteneur */
+    text-align: center; /* Centrer le texte dans les boutons */}
+
+.print-button {
+    background-color: #4CAF50;
+}
+
+.delete-button {
+    background-color: #f44336;
+}
+
+.upload-button {
+    background-color: #007bff; /* Couleur bleue pour le bouton upload */
+    /* ... autres styles ... */
+}
+
+/* styles.css - Ajoutez ces styles pour le spinner et l'indicateur de pourcentage */
+
+.loading-spinner {
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top: 4px solid #000;
+    width: 40px;
+    height: 40px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#loading-indicator {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    text-align: center;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+#loading-indicator p {
+    margin-top: 10px;
+}
+
+/* Style pour la ligne sélectionnée */
+.file-list tr.selected {
+    background-color: #add8e6; /* Couleur bleutée pour la ligne sélectionnée */
+}

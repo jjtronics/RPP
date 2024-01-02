@@ -1,0 +1,53 @@
+<!-- index.html - Code complet -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web-Cassini by JJ</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+<body>
+    <div class="header">
+        <img src="{{ url_for('static', filename='LOGO-RESIN-PRINT-PORTAL.png') }}" alt="Resin Print Portal Logo" class="logo">
+    <div class="printer-ip-container">
+        <input type="text" id="printer-ip" readonly onblur="saveIP()">
+        <button onclick="editIP()" class="edit-ip-btn">
+            <img src="{{ url_for('static', filename='edit-246-48.png') }}" alt="Edit">
+        </button>
+    </div>
+    </div>
+    <div class="container">
+        <div id="status" class="status-text">Chargement...</div>
+        <div class="progress-container">
+            <div class="progress-bar" id="progress-bar"></div>
+            <span class="progress-text" id="progress-text">0%</span>
+        </div>
+    </div>
+
+
+<div class="file-management-container">
+    <table class="file-list" id="file-list">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Taille (Mo)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Les lignes du tableau seront insérées ici par JavaScript -->
+        </tbody>
+    </table>
+    <!-- Le reste de vos boutons et éléments -->
+    <div class="action-buttons">
+        <button class="action-button upload-button" onclick="uploadFile()">Upload</button>
+        <button class="action-button print-button" onclick="printSelectedFile()">Print</button>
+        <button class="action-button delete-button" onclick="deleteSelectedFile()">Delete</button>
+    </div>
+</div>
+
+
+    <!-- Ensure the JS file link is correct -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
