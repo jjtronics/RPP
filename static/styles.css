@@ -209,3 +209,15 @@ body {
 .file-list tr.selected {
     background-color: #add8e6; /* Couleur bleutée pour la ligne sélectionnée */
 }
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
