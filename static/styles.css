@@ -211,13 +211,21 @@ body {
 }
 
 footer {
-    text-align: center;
-    padding: 20px;
     background-color: #333;
     color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.8em; /* Taille de texte plus petite */
+    border-top: 1px solid #444; /* Ajoute une bordure en haut du footer */
 }
 
 footer a {
-    color: #fff;
+    color: #ddd;
     text-decoration: none;
+    margin: 0 5px;
+}
+
+footer a:hover {
+    color: #fff;
+    text-decoration: underline;
 }
