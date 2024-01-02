@@ -61,5 +61,29 @@ Adresse IP lue : 192.168.1.50
 
    
    Vous pouvez upload votre fichier tranché (extension .goo généralement) en cliquant sur le bouton bleu UPLOAD : 
-   
+
 ![Upload](SCREENSHOTS/RPP-UPLOAD-1-SELECT-FILE.png)
+
+   Une roue de progression s'affichera durant le transfert : 
+
+![Upload](SCREENSHOTS/RPP-UPLOAD-2-PROGRESS-UPLOAD.png)
+
+   Une fois le transfert correctement terminé vous devriez avoir le message : 
+
+![Upload](SCREENSHOTS/RPP-UPLOAD-3-UPLOAD-COMPLETED.png)
+
+   Vous pouvez ensuite sélectionner le fichier dans la liste et cliquer sur le bouton vert PRINT : 
+
+![Print](SCREENSHOTS/RPP-PRINT-1-CLICK-PRINT.png)
+
+   Le fichier est envoyé à l'imprimante  : 
+
+![Print](SCREENSHOTS/RPP-PRINT-2-SEND-FILE-TO-PRINTER.png)
+
+   Une fois le fichier reçu par l'imprimante, le status passe à 75% et le print débute : 
+
+![Print](SCREENSHOTS/RPP-PRINT-3-SEND-PRINT-COMMAND.png)
+![Print](SCREENSHOTS/RPP-PRINT-4-PRINT-STARTED.png)
+
+
+
