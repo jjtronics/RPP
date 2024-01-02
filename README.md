@@ -1,3 +1,6 @@
+![LOGO](static/LOGO-RESIN-PRINT-PORTAL.png)
+
+
 RESIN PRINT PORTAL (RPP)
 Français
 À propos de RESIN PRINT PORTAL
