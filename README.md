@@ -16,11 +16,11 @@ Les contributions à ce projet sont les bienvenues. Si vous souhaitez contribuer
 
 ### Utilisation
 Lancez simplement la commande :
-'''
+```
 pi@octopi:~/RPP $ python3 rpp.py
-'''
+```
 Vous devriez y voir : 
-'''
+```
 python3 rpp.py
 Serving Flask app 'rpp' (lazy loading)
 Environment: production
@@ -37,9 +37,10 @@ Adresse IP lue : 192.168.1.50
 192.168.1.11 - - [02/Jan/2024 16:36:03] "GET /print-status HTTP/1.1" 200 -
 Adresse IP lue : 192.168.1.50
 192.168.1.11 - - [02/Jan/2024 16:36:09] "GET /print-status HTTP/1.1" 200 -
-'''
+```
 
    L'interface est accessible sur le port 5001 mais je vous conseille de passer par un serveur web du genre nginx : 
+   
 ![Screenshot](SCREENSHOTS/RPP-IDLE.png)
 
    
