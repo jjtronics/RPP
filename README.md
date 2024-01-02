@@ -14,7 +14,23 @@
 ### Contribution
 Les contributions à ce projet sont les bienvenues. Si vous souhaitez contribuer, n'hésitez pas à créer une pull request ou à ouvrir une issue.
 
+### Installation
+Clonez le dépot : 
+```
+git clone https://github.com/jjtronics/RPP.git
+```
+
+Installez les dépendances : 
+```
+pip3 install alive-progress
+```
+
+
 ### Utilisation
+ALlez dans le dossier : 
+```
+pi@octopi:~ $ cd RPP
+```
 Lancez simplement la commande :
 ```
 pi@octopi:~/RPP $ python3 rpp.py
