@@ -3,7 +3,7 @@ Description=Resin Print Portal
 After=network.target
 
 [Service]
-User=toxyk
+User=www-data
 Group=www-data
 WorkingDirectory=/opt/RPP
 ExecStart=/usr/bin/python3 /opt/RPP/rpp.py
