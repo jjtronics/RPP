@@ -45,18 +45,18 @@ def set_printer_ip():
         print(f"Erreur lors de la mise à jour de l'adresse IP : {e}")
         return jsonify({'error': str(e)})
 
-
-
 @app.route('/print-status')
 def print_status():
     printer_ip = get_printer_ip()
     if printer_ip is None:
-        return jsonify({'error': 'L\'adresse IP de l\'imprimante n\'a pas pu être lue.'})
+        return jsonify({'error': "L'adresse IP de l'imprimante n'a pas pu être lue."})
 
     try:
         cmd = ['./cassini.py', '-p', printer_ip, 'status']
         result = subprocess.run(cmd, capture_output=True, text=True)
         output = result.stdout.strip()
+
+        is_online = printer_ip in output
 
         match = re.search(r'Layers: (\d+)/(\d+)', output)
         if match:
@@ -69,12 +69,11 @@ def print_status():
             'status': output,
             'current_layer': current_layer,
             'total_layers': total_layers,
-            'progress': progress
+            'progress': progress,
+            'is_online': is_online
         })
     except Exception as e:
         return jsonify({'error': str(e)})
-
-
 
 @app.route('/upload', methods=['POST'])
 def upload_file():
