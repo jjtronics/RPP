@@ -5,7 +5,12 @@
 ## Français
 
 ### À propos de RESIN PRINT PORTAL
-**RESIN PRINT PORTAL (RPP)** est une interface web conçue pour faciliter la gestion et le suivi des impressions 3D à base de résine. Ce projet est inspiré par et se base sur le projet [Cassini](https://github.com/vvuk/cassini).
+
+**RESIN PRINT PORTAL (RPP)** est une interface web conçue pour faciliter la gestion et le suivi des impressions 3D à base de résine. 
+Ce projet est inspiré par OctoPrint, la référence en matière de gestion de filaments et se base sur le projet [Cassini](https://github.com/vvuk/cassini).
+Seule les imprimantes Elegoo wifi sont géré pour le moment
+
+Pour en savoir plus, allez sur mon article de blog : [JJtronics](https://www.jjtronics.com/wordpress/2024/01/02/decouverte-et-creation-durant-les-fetes-naissance-de-resin-print-portal/).
 
 ### Fonctionnalités
 - Téléchargement de fichiers pour impression.
@@ -115,4 +120,10 @@ Jan 03 10:43:54 RPP python3[4939]: 192.168.1.11 - - [03/Jan/2024 10:43:54] "GET 
 ![Print](SCREENSHOTS/RPP-PRINT-5-PROGRESS-0.png)
 ![Print](SCREENSHOTS/RPP-PRINT-6-PROGRESS-7.png)
 
+### Mise à jour 
 
+Etant encore un projet je dirais en Alpha, le développement est en continue jusqu'a la sortie de la première release, donc faire régulièrement des mises à jour :
+```
+cd /opt/RPP/
+sudo git pull
+```
