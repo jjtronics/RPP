@@ -14,26 +14,35 @@
 ### Contribution
 Les contributions à ce projet sont les bienvenues. Si vous souhaitez contribuer, n'hésitez pas à créer une pull request ou à ouvrir une issue.
 
-### Installation
+### Installation (Testé à partir d'une VM Debian 12)
+
+Installation des dépendances :
+```
+sudo apt update
+sudo apt install git
+sudo apt install python3-pip
+sudo apt install python3-flask
+sudo pip3 install alive-progress --break-system-packages
+``` 
+
 Clonez le dépot : 
 ```
 git clone https://github.com/jjtronics/RPP.git
 ```
 
-Installez les dépendances : 
-```
-pip3 install alive-progress
-```
-
 
 ### Utilisation
-ALlez dans le dossier : 
+Allez dans le dossier : 
 ```
-pi@octopi:~ $ cd RPP
+cd RPP
+```
+*Optionnel, vous pouvez dès a présent paramétrer l'IP de votre imprimante* : 
+```
+echo 192.168.1.50 > printer_ip.txt
 ```
 Lancez simplement la commande :
 ```
-pi@octopi:~/RPP $ python3 rpp.py
+python3 rpp.py
 ```
 Vous devriez y voir : 
 ```
