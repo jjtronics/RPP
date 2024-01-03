@@ -201,6 +201,17 @@ function fetchPrintStatus() {
             let progressValue = parseFloat(data.progress).toFixed(2);
             progressBar.style.width = progressValue + '%';
             progressText.innerText = progressValue + '%';
+            // Mettre    jour la capsule ONLINE/OFFLINE
+            const onlineStatusElement = document.getElementById('online-status');
+            if (data.is_online) {
+                onlineStatusElement.classList.remove('offline');
+                onlineStatusElement.classList.add('online');
+                onlineStatusElement.textContent = 'ONLINE';
+            } else {
+                onlineStatusElement.classList.remove('online');
+                onlineStatusElement.classList.add('offline');
+                onlineStatusElement.textContent = 'OFFLINE';
+            }
         })
         .catch(error => {
             console.error('Error:', error);
