@@ -20,8 +20,14 @@ function loadPrinterIP() {
         });
 }
 
+setInterval(loadPrinterIP, 5000); // Mettre    jour le statut toutes les 5 secondes
+
+
 function saveIP() {
-    let newIP = document.getElementById('printer-ip').value;
+    let ipField = document.getElementById('printer-ip');
+    let saveBtn = document.querySelector('.save-ip-btn'); // Sélection du bouton Save
+    let newIP = ipField.value;
+
     fetch('/set-printer-ip', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
@@ -31,20 +37,25 @@ function saveIP() {
     .then(data => {
         if (data.message) {
             alert('Printer IP updated!');
+            ipField.readOnly = true; // Rendre le champ IP en lecture seule à nouveau
+            saveBtn.style.display = 'none'; // Cacher le bouton Save
         } else {
             console.error('Error saving IP:', data.error);
         }
     });
 }
 
-
-
 function editIP() {
     let ipField = document.getElementById('printer-ip');
+    let saveBtn = document.querySelector('.save-ip-btn'); // Sélection du bouton Save
+
     ipField.readOnly = false;
     ipField.focus();
     ipField.select();
+
+    saveBtn.style.display = 'inline-block'; // Afficher le bouton Save
 }
+
 
 
 // script.js - Code complet pour la gestion du statut de l'imprimante, l'affichage, l'upload et la suppression des fichiers

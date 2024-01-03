@@ -10,15 +10,17 @@
 <body>
     <div class="header">
         <img src="{{ url_for('static', filename='LOGO-RESIN-PRINT-PORTAL.png') }}" alt="Resin Print Portal Logo" class="logo">
-    <div class="printer-ip-container">
-<div id="online-indicator">
-    <span id="online-status" class="online-status offline">OFFLINE</span>
-</div>        <input type="text" id="printer-ip" readonly onblur="saveIP()">
-        <button onclick="editIP()" class="edit-ip-btn">
-            <img src="{{ url_for('static', filename='edit-246-48.png') }}" alt="Edit">
-        </button>
+
+<div class="printer-ip-container">
+    <div id="online-indicator">
+        <span id="online-status" class="online-status offline">OFFLINE</span>
     </div>
+    <input type="text" id="printer-ip" readonly>
+    <button onclick="editIP()" class="edit-ip-btn">Edit</button>
+    <button onclick="saveIP()" class="save-ip-btn">Save</button>
     </div>
+</div>
+
     <div class="container">
         <div id="status" class="status-text">Chargement...</div>
         <div class="progress-container">

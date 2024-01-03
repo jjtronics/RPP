@@ -26,11 +26,18 @@ def get_printer_ip():
         with open('printer_ip.txt', 'r') as file:
             ip = file.read().strip()
             print(f"Adresse IP lue : {ip}")  # Pour le débogage
-            return ip
+            return jsonify({'ip': ip})  # Renvoie une réponse JSON
     except Exception as e:
         print(f"Erreur lors de la lecture de l'adresse IP : {e}")  # Pour le débogage
-        return None
+        return jsonify({'error': str(e)})  # Renvoie une erreur en JSON
 
+def read_printer_ip():
+    try:
+        with open('printer_ip.txt', 'r') as file:
+            return file.read().strip()
+    except Exception as e:
+        print(f"Erreur lors de la lecture de l'adresse IP : {e}")
+        return None
 
 @app.route('/set-printer-ip', methods=['POST'])
 def set_printer_ip():
@@ -47,7 +54,7 @@ def set_printer_ip():
 
 @app.route('/print-status')
 def print_status():
-    printer_ip = get_printer_ip()
+    printer_ip = read_printer_ip()
     if printer_ip is None:
         return jsonify({'error': "L'adresse IP de l'imprimante n'a pas pu être lue."})
 
@@ -114,7 +121,7 @@ def run_command(cmd, on_complete=None, *args):
 progress_status = {}
 
 def print_file_after_upload(filename):
-    printer_ip = get_printer_ip()
+    printer_ip = read_printer_ip()
     if printer_ip is None:
         return jsonify({'error': 'L\'adresse IP de l\'imprimante n\'a pas pu être lue.'})
     # Envoie la mise à jour de progression à 75%
@@ -134,7 +141,7 @@ def get_progress(filename):
 
 @app.route('/print-file', methods=['POST'])
 def print_file():
-    printer_ip = get_printer_ip()
+    printer_ip = read_printer_ip()
     if printer_ip is None:
         return jsonify({'error': 'L\'adresse IP de l\'imprimante n\'a pas pu être lue.'})
 
