@@ -39,7 +39,7 @@ cd RPP
 ```
 *Optionnel, vous pouvez dès a présent paramétrer l'IP de votre imprimante* : 
 ```
-echo 192.168.1.50 > printer_ip.txt
+sudo echo 192.168.1.50 > printer_ip.txt
 ```
 Lancez simplement la commande :
 ```
