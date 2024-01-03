@@ -20,8 +20,11 @@ function loadPrinterIP() {
         });
 }
 
-setInterval(loadPrinterIP, 5000); // Mettre    jour le statut toutes les 5 secondes
+document.addEventListener('DOMContentLoaded', (event) => {
+    loadPrinterIP();
+});
 
+// setInterval(loadPrinterIP, 5000); // Mettre    jour le statut toutes les 5 secondes
 
 function saveIP() {
     let ipField = document.getElementById('printer-ip');
