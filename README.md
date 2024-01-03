@@ -27,6 +27,7 @@ sudo pip3 install alive-progress --break-system-packages
 
 Clonez le dépot : 
 ```
+cd /opt/
 git clone https://github.com/jjtronics/RPP.git
 ```
 
