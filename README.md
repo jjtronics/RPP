@@ -128,3 +128,10 @@ Etant encore un projet je dirais en Alpha, le développement est en continue jus
 cd /opt/RPP/
 sudo git pull
 ```
+Donnez lez droits pour écrire dans le fichier d'upload et l'ip de l'imprimante : 
+```
+sudo chmod -R 775 /opt/RPP/uploads
+sudo chown -R www-data:www-data /opt/RPP/uploads
+sudo chmod -R 775 /opt/RPP/printer_ip.txt
+sudo chown -R www-data:www-data /opt/RPP/printer_ip.txt
+```
