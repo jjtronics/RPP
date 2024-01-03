@@ -126,6 +126,7 @@ Jan 03 10:43:54 RPP python3[4939]: 192.168.1.11 - - [03/Jan/2024 10:43:54] "GET 
 Etant encore un projet je dirais en Alpha, le développement est en continue jusqu'a la sortie de la première release, donc faire régulièrement des mises à jour :
 ```
 cd /opt/RPP/
+sudo git reset --hard HEAD
 sudo git pull
 ```
 Donnez lez droits pour écrire dans le fichier d'upload et l'ip de l'imprimante : 
