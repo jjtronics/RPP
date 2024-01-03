@@ -136,3 +136,132 @@ sudo chown -R www-data:www-data /opt/RPP/uploads
 sudo chmod -R 775 /opt/RPP/printer_ip.txt
 sudo chown -R www-data:www-data /opt/RPP/printer_ip.txt
 ```
+
+
+
+
+# RESIN PRINT PORTAL (RPP)
+
+## English
+
+### About RESIN PRINT PORTAL
+
+**RESIN PRINT PORTAL (RPP)** is a web interface designed to facilitate the management and monitoring of resin-based 3D printing. 
+This project is inspired by OctoPrint, a reference in filament management, and is based on the [Cassini](https://github.com/vvuk/cassini) project.
+
+Currently, only Elegoo wifi printers are supported.
+
+For more information, visit my blog post: [JJtronics](https://www.jjtronics.com/wordpress/2024/01/02/decouverte-et-creation-durant-les-fetes-naissance-de-resin-print-portal/).
+
+### Features
+- File downloading for printing.
+- Launching and real-time tracking of prints.
+
+### Contribution
+Contributions to this project are welcome. If you wish to contribute, feel free to create a pull request or open an issue.
+
+### Installation (Tested from a Debian 12 VM)
+
+Installing dependencies:
+```
+sudo apt update
+sudo apt install git
+sudo apt install python3-pip
+sudo apt install python3-flask
+sudo pip3 install alive-progress --break-system-packages
+``` 
+
+Clone the repository: 
+```
+cd /opt/
+git clone https://github.com/jjtronics/RPP.git
+```
+
+Give write permissions to the upload file and the printer IP: 
+```
+sudo chmod -R 775 /opt/RPP/uploads
+sudo chown -R www-data:www-data /opt/RPP/uploads
+sudo chmod -R 775 /opt/RPP/printer_ip.txt
+sudo chown -R www-data:www-data /opt/RPP/printer_ip.txt
+```
+
+Go to the folder: 
+```
+cd RPP
+```
+*Optional, you can configure your printer's IP address now*: 
+```
+sudo echo 192.168.1.50 > printer_ip.txt
+```
+
+Copy the systemd script to manage automatic launch at system startup: 
+```
+sudo mv rpp.service /etc/systemd/system/
+sudo systemctl enable rpp
+sudo systemctl start rpp
+```
+
+To verify proper operation: 
+```
+sudo systemctl status rpp
+
+* rpp.service - Resin Print Portal
+     Loaded: loaded (/etc/systemd/system/rpp.service; enabled; preset: enabled)
+     Active: active (running) since Wed 2024-01-03 10:40:54 UTC; 3min 3s ago
+   Main PID: 4938 (python3)
+      Tasks: 3 (limit: 38302)
+     Memory: 41.8M
+        CPU: 5.229s
+     CGroup: /system.slice/rpp.service
+             |-4938 /usr/bin/python3 /opt/RPP/rpp.py
+             `-4939 /usr/bin/python3 /opt/RPP/rpp.py
+[...]
+```
+
+The interface is accessible on port 5001, but it is recommended to use a web server like nginx: 
+
+![Screenshot](SCREENSHOTS/RPP-IDLE.png)
+
+You can upload your sliced file (usually .goo extension) by clicking the blue UPLOAD button: 
+
+![Upload](SCREENSHOTS/RPP-UPLOAD-1-SELECT-FILE.png)
+
+A progress wheel will display during the transfer: 
+
+![Upload](SCREENSHOTS/RPP-UPLOAD-2-PROGRESS-UPLOAD.png)
+
+Once the transfer is successfully completed, you should see the message: 
+
+![Upload](SCREENSHOTS/RPP-UPLOAD-3-UPLOAD-COMPLETED.png)
+
+Then you can select the file from the list and click on the green PRINT button: 
+
+![Print](SCREENSHOTS/RPP-PRINT-1-CLICK-PRINT.png)
+
+The file is sent to the printer: 
+
+![Print](SCREENSHOTS/RPP-PRINT-2-SEND-FILE-TO-PRINTER.png)
+
+Once the file is received by the printer, the status changes to 75% and the print starts: 
+
+![Print](SCREENSHOTS/RPP-PRINT-3-SEND-PRINT-COMMAND.png)
+![Print](SCREENSHOTS/RPP-PRINT-4-PRINT-STARTED.png)
+![Print](SCREENSHOTS/RPP-PRINT-5-PROGRESS-0.png)
+![Print](SCREENSHOTS/RPP-PRINT-6-PROGRESS-7.png)
+
+### Update 
+
+As this is still a project I would say in Alpha, development is ongoing until the first release, so regular updates are recommended:
+```
+cd /opt/RPP/
+sudo git reset --hard HEAD
+sudo git pull
+```
+Give write permissions to the upload file and the printer IP: 
+```
+sudo chmod -R 775 /opt/RPP/uploads
+sudo chown -R www-data:www-data /opt/RPP/uploads
+sudo chmod -R 775 /opt/RPP/printer_ip.txt
+sudo chown -R www-data:www-data /opt/RPP/printer_ip.txt
+```
+
