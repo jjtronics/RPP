@@ -1,0 +1,14 @@
+[Unit]
+Description=Resin Print Portal
+After=network.target
+
+[Service]
+User=toxyk
+Group=www-data
+WorkingDirectory=/opt/RPP
+ExecStart=/usr/bin/python3 /opt/RPP/rpp.py
+Restart=on-failure
+KillSignal=SIGINT
+
+[Install]
+WantedBy=multi-user.target
