@@ -31,8 +31,14 @@ cd /opt/
 git clone https://github.com/jjtronics/RPP.git
 ```
 
+Donnez lez droits pour écrire dans le fichier d'upload et l'ip de l'imprimante : 
+```
+sudo chmod -R 775 /opt/RPP/uploads
+sudo chown -R www-data:www-data /opt/RPP/uploads
+sudo chmod -R 775 /opt/RPP/printer_ip.txt
+sudo chown -R www-data:www-data /opt/RPP/printer_ip.txt
+```
 
-### Utilisation
 Allez dans le dossier : 
 ```
 cd RPP
@@ -41,36 +47,8 @@ cd RPP
 ```
 sudo echo 192.168.1.50 > printer_ip.txt
 ```
-Lancez simplement la commande :
-```
-python3 rpp.py
-```
-Vous devriez y voir : 
-```
-python3 rpp.py
-Serving Flask app 'rpp' (lazy loading)
-Environment: production
-WARNING: This is a development server. Do not use it in a production deployment.
-Use a production WSGI server instead.
-Debug mode: on
-Running on all addresses.
-WARNING: This is a development server. Do not use it in a production deployment.
-Running on http://192.168.1.103:5001/ (Press CTRL+C to quit)
-Restarting with watchdog (inotify)
-Debugger is active!
-Debugger PIN: 280-428-479
-Adresse IP lue : 192.168.1.50
-192.168.1.11 - - [02/Jan/2024 16:36:03] "GET /print-status HTTP/1.1" 200 -
-Adresse IP lue : 192.168.1.50
-192.168.1.11 - - [02/Jan/2024 16:36:09] "GET /print-status HTTP/1.1" 200 -
-```
 
-   L'interface est accessible sur le port 5001 mais je vous conseille de passer par un serveur web du genre nginx : 
-   
-![Screenshot](SCREENSHOTS/RPP-IDLE.png)
-
-
-Une fois l'installation validé, j'ai créer un script systemd pour gérer le lancement automatique au démarrage de la machine : 
+Copiez le script systemd pour gérer le lancement automatique au démarrage de la machine : 
 ```
 sudo mv rpp.service /etc/systemd/system/
 sudo systemctl enable rpp
@@ -105,7 +83,12 @@ Jan 03 10:43:54 RPP python3[4939]: 192.168.1.11 - - [03/Jan/2024 10:43:54] "GET 
 ```
 
 
-   Vous vous reconnecter à l'interface web et upload votre fichier tranché (extension .goo généralement) en cliquant sur le bouton bleu UPLOAD : 
+   L'interface est accessible sur le port 5001 mais je vous conseille de passer par un serveur web du genre nginx : 
+   
+![Screenshot](SCREENSHOTS/RPP-IDLE.png)
+
+
+   Vous pouvez upload votre fichier tranché (extension .goo généralement) en cliquant sur le bouton bleu UPLOAD : 
 
 ![Upload](SCREENSHOTS/RPP-UPLOAD-1-SELECT-FILE.png)
 
