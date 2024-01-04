@@ -113,6 +113,11 @@ body {
 .status-text {
     margin-bottom: 20px;
     font-size: 16px;
+    font-family: 'Roboto', 'Arial', sans-serif; /* Police sans empattement moderne */
+    color: #333; /* Couleur de texte fonc  e pour le contraste */
+#    letter-spacing: 0.5px; /* Espacement des lettres pour un look   pur   */
+#    line-height: 1.6; /* Espacement des lignes pour la lisibilit   */
+    font-weight: bold;
 }
 
 .progress-container {
@@ -140,7 +145,7 @@ body {
     width: 100%;
     text-align: center;
     line-height: 30px;
-    color: white;
+    color: #333;
     top: 0;
     transition: opacity 0.5s ease; /* Smooth transition for text opacity */
 }
@@ -171,6 +176,11 @@ body {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
+    font-family: 'Roboto', 'Arial', sans-serif; /* Police sans empattement moderne */
+    color: #333; /* Couleur de texte fonc  e pour le contraste */
+#    letter-spacing: 0.5px; /* Espacement des lettres pour un look   pur   */
+#    line-height: 1.6; /* Espacement des lignes pour la lisibilit   */
+    font-weight: bold;
 }
 
 .file-list tr:nth-child(even) {
