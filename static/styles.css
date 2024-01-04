@@ -212,7 +212,11 @@ body {
     border: none;
     outline: none;
     width: 100%; /* Faire en sorte que les boutons remplissent le conteneur */
-    text-align: center; /* Centrer le texte dans les boutons */}
+    text-align: center; /* Centrer le texte dans les boutons */
+    margin-top: 20px; /* Assure un espacement entre les boutons */
+    margin-right: 20px; /* Assure un espacement entre les boutons */
+    margin-left: 20px; /* Assure un espacement entre les boutons */
+}
 
 .print-button {
     background-color: #4CAF50;
