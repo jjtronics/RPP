@@ -301,6 +301,10 @@ footer {
     bottom:0;  /* on le colle en bas */
     width:100%;
     height:100px;   /* Hauteur du pied de page */
+
+    font-family: 'Roboto', 'Arial', sans-serif; /* Police sans empattement moderne */
+#    letter-spacing: 0.5px; /* Espacement des lettres pour un look   pur   */
+#    line-height: 1.6; /* Espacement des lignes pour la lisibilit   */
 }
 
 footer a {
