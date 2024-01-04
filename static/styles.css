@@ -148,6 +148,11 @@ body {
     color: #333;
     top: 0;
     transition: opacity 0.5s ease; /* Smooth transition for text opacity */
+    font-family: 'Roboto', 'Arial', sans-serif; /* Police sans empattement moderne */
+    color: #333; /* Couleur de texte fonc  e pour le contraste */
+#    letter-spacing: 0.5px; /* Espacement des lettres pour un look   pur   */
+#    line-height: 1.6; /* Espacement des lignes pour la lisibilit   */
+    font-weight: bold;
 }
 
 .file-management-container {
