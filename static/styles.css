@@ -117,15 +117,20 @@ body {
 
 .progress-container {
     background-color: #ddd;
-    border-radius: 5px;
-    overflow: hidden;
+    border-radius: 20px; /* Increased radius for a more modern, rounded look */
+    overflow: hidden; /* Ensures child elements adhere to the border radius */
     position: relative;
     margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Adds subtle shadow for depth */
+    box-shadow: 0px 8px 15px rgba(0,0,0,0.6); /* Ombre port  e pour cr  er un effet de profondeur */
+    overflow: hidden; /* S'assure que le logo ne d  passe pas les coins arrondis */
 }
 
 .progress-bar {
     height: 30px;
-    background-color: #4CAF50;
+    background-color: #4CAF50; /* Fallback color */
+    background-image: linear-gradient(to right, #76b852, #8DC26F); /* Gradient effect */
+    border-radius: 20px; /* Maintain the same border radius as the container for consistency */
     width: 0%;
     transition: width 0.5s ease;
 }
@@ -137,6 +142,7 @@ body {
     line-height: 30px;
     color: white;
     top: 0;
+    transition: opacity 0.5s ease; /* Smooth transition for text opacity */
 }
 
 .file-management-container {
